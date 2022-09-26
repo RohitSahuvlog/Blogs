@@ -14,7 +14,10 @@ app.use("/auth",authRouter)
 app.use(authentication)
 app.use("/blogs",userRouter)
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
+app.get("/",(req,res)=>{
+    res.send("heroku deployments")
+})
 
 app.listen(PORT,async()=>{
     try{
